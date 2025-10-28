@@ -3,6 +3,7 @@
 \RequirePackage{booktabs}
 
 \input{docs/cover}
+\usepackage[normalem]{ulem}
 
 \newcommand\contentLength{7.5cm}
 \newcommand\contentVerticalSpace{1.3em}
@@ -48,10 +49,12 @@
     {\sizeTwol {
         \fontSimheiBold 论文\fontSimheiBoldChar\hspace{0pt}(\fontSimheiBold 设计\fontSimheiBoldChar)\hspace{0pt}\fontSimheiBold 题目：
     }} &  {\sizeThreel {
-    \fontSimsun\fontTimesNewRoman
-    \underline{\makebox[\contentLength][c]{%
-    		\parbox[t]{\contentLength}{\centering \thesisTitle}
-	    }}
+    \underline{\uline{\fontSimsun\fontTimesNewRoman\parbox[t]{\contentLength}{%
+    	\centering
+    	{\thesisTitle}}\hfill}}%
+%    \underline{\makebox[\contentLength][c]{%
+%    		\parbox[t]{\contentLength}{\centering \thesisTitle}
+%	    }}
 	}} \\
     \specialrule{0em}{\contentVerticalSpace}{0pt}
     {\sizeFour {

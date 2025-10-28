@@ -158,7 +158,7 @@
 }
 
 % 图注
-\newcommand{\figurenotes}[1]{\fontSimsun\sizeFivel}
+\newcommand{\notes}{\fontSimsun\sizeFivel}
 
 %超链接
 \usepackage{hyperref}

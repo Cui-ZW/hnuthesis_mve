@@ -43,18 +43,24 @@
             }
         }
     }
-
+    
+    \newlength{\thesistitlewidth}
+    \settowidth{\thesistitlewidth}{\thesisTitle}
     \vspace{6.5cm}
     \begin{tabular}{r l}
     {\sizeTwol {
         \fontSimheiBold 论文\fontSimheiBoldChar\hspace{0pt}(\fontSimheiBold 设计\fontSimheiBoldChar)\hspace{0pt}\fontSimheiBold 题目：
-    }} &  {\sizeThreel {
+    }} &  {\sizeThreel{
+    \ifdim\thesistitlewidth>\contentLength
     \underline{\uline{\fontSimsun\fontTimesNewRoman\parbox[t]{\contentLength}{%
     	\centering
+    	\renewcommand{\ULdepth}{1pt}    	
     	{\thesisTitle}}\hfill}}%
-%    \underline{\makebox[\contentLength][c]{%
-%    		\parbox[t]{\contentLength}{\centering \thesisTitle}
-%	    }}
+    \else
+    \underline{\makebox[\contentLength][c]{%
+    		\parbox[t]{\contentLength}{\centering \thesisTitle}
+	    }}
+	\fi
 	}} \\
     \specialrule{0em}{\contentVerticalSpace}{0pt}
     {\sizeFour {
